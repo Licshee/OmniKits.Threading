@@ -38,6 +38,7 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CanRunInterfaces.cs" />
     <Compile Include="ICanLock.cs" />
     <Compile Include="IAwaitData.cs" />
     <Compile Include="IDataPulse.cs" />

@@ -45,6 +45,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DuplexCommandBase.cs" />
     <Compile Include="TaskDataPulse.cs" />
     <Compile Include="TaskPulseTube.cs" />
   </ItemGroup>
