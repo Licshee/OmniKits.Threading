@@ -2,7 +2,7 @@
 
 namespace OmniKits
 {
-    public interface IWaitDataAsync<T> : IWaitData<T>
+    public interface IAwaitData<T> : IWaitData<T>
     {
         Task<T> Task { get; }
     }

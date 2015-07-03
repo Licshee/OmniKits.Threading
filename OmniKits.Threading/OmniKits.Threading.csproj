@@ -41,12 +41,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataTrigger.cs" />
-    <Compile Include="DataTriggerAsync.cs" />
+    <Compile Include="DataPulse.cs" />
     <Compile Include="Locked.cs" />
     <Compile Include="DoubleCheckedLockBase.cs" />
-    <Compile Include="NanaTube.cs" />
-    <Compile Include="NanaTubeAsync.cs" />
+    <Compile Include="PulseTube.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

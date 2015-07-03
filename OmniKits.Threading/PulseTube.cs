@@ -5,12 +5,12 @@ using System.Threading;
 
 namespace OmniKits.Threading
 {
-    public class NanaTube<T> : IEnumerable<T>
+    public class PulseTube<T> : IEnumerable<T>
     {
         IWaitData<Pair> _Node;
         protected IWaitData<Pair> CurrentNode => _Node;
 
-        public NanaTube()
+        public PulseTube()
         {
             _Node = CreateNode();
         }
@@ -28,7 +28,7 @@ namespace OmniKits.Threading
         }
 
         protected virtual IWaitData<Pair> CreateNode()
-            => new DataTrigger<Pair>();
+            => new DataPulse<Pair>();
 
         public virtual void Push(T data)
         {

@@ -8,14 +8,23 @@ using System.Threading.Tasks;
 namespace TubeTest
 {
     using OmniKits.Threading;
+    using OmniKits.Threading.Tasks;
 
     class Program
     {
+        enum DataStage
+        {
+            Init = 1,
+            Intermediate = 2,
+            End = 3,
+        }
+
         class Data
         {
             public int ThreadIndex { get; set; }
             public Guid Guid { get; set; }
             public int Number { get; set; }
+            public DataStage Stage { get; set; }
 
             byte[] _Payload = new byte[10000000];
         }
@@ -25,8 +34,9 @@ namespace TubeTest
         {
             await TaskEx.Yield();
 
-            var tube = new NanaTubeAsync<Data>();
-            var pc = Environment.ProcessorCount / 2;
+            var tube = new TaskPulseTube<Data>();
+            var pc = Environment.ProcessorCount;
+            pc /= 2;
 
             for (var j = 0; j < pc; j++)
             {
@@ -38,24 +48,48 @@ namespace TubeTest
                     while (true)
                     {
                         var from = rnd.Next(2000000000);
-                        var to = from + rnd.Next(65536);
+                        //var to = from + rnd.Next(65536);
+                        var to = from + 4096;
                         var guid = Guid.NewGuid();
 
-                        for (var i = from; i < to; i++)
+
+                        tube.Push(new Data
                         {
-                            //var r = rnd.Next(65536);
-                            //if (r == 0)
-                            //    i++;
-                            //else if (r == 1)
-                            //    continue;
+                            ThreadIndex = idx,
+                            Guid = guid,
+                            Number = from,
+                            Stage = DataStage.Init,
+                        });
+
+                        for (var i = from + 1; i < to; i++)
+                        {
+                            switch (i % 65536)
+                            {
+                                case 0:
+                                case 4:
+                                case 16:
+                                case 64:
+                                case 256:
+                                case 1024:
+                                    continue;
+                            }
 
                             tube.Push(new Data
                             {
                                 ThreadIndex = idx,
                                 Guid = guid,
                                 Number = i,
+                                Stage = DataStage.Intermediate,
                             });
                         }
+
+                        tube.Push(new Data
+                        {
+                            ThreadIndex = idx,
+                            Guid = guid,
+                            Number = to,
+                            Stage = DataStage.End,
+                        });
                     }
                 });
             };
@@ -71,20 +105,38 @@ namespace TubeTest
 
                     foreach (var data in tube.AsEnumerable<Data>())
                     {
-                        Data old;
-                        if (dict.TryGetValue(data.ThreadIndex, out old) && data.Guid == old.Guid)
+                        var ti = data.ThreadIndex;
+                        var stage = data.Stage;
+                        var number = data.Number;
+
+                        if (stage == DataStage.End)
                         {
-                            if (data.Number != old.Number + 1)
-                            {
-                                Console.WriteLine("[Error] {0} - {1}: {2} - {3} -> {4}", idx, data.ThreadIndex, data.Guid, old.Number, data.Number);
-                            }
-                        }
-                        else
-                        {
-                            Console.WriteLine("{0} - {1}: {2} - {3}", idx, data.ThreadIndex, data.Guid, data.Number);
+                            Console.WriteLine($"[{stage}]\t{idx} - {ti} : {data.Guid} - {number}");
+                            dict.Remove(ti);
+                            continue;
                         }
 
-                        dict[data.ThreadIndex] = data;
+                        try
+                        {
+                            Data old;
+                            if (dict.TryGetValue(ti, out old))
+                            {
+                                var oldNumber = old.Number;
+
+                                if (stage == DataStage.Intermediate && number == oldNumber + 1)
+                                    continue;
+
+                                Console.WriteLine($"[Error]\t[{stage}]\t{idx} - {ti}: {data.Guid} - {oldNumber} -> {number}");
+                            }
+                            else
+                            {
+                                Console.WriteLine($"[{stage}]\t{idx} - {ti} : {data.Guid} - {number}");
+                            }
+                        }
+                        finally
+                        {
+                            dict[ti] = data;
+                        }
                     }
                 });
             };

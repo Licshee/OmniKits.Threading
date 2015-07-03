@@ -5,11 +5,11 @@
     <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B3BCD329-5FBC-4937-8BBA-BA57CD11407D}</ProjectGuid>
+    <ProjectGuid>{220FE0C2-756A-4E59-8E11-422EF9B4118B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OmniKits</RootNamespace>
-    <AssemblyName>OmniKits.Interfaces</AssemblyName>
+    <RootNamespace>OmniKits.Threading.Tasks</RootNamespace>
+    <AssemblyName>OmniKits.Threading.Tasks</AssemblyName>
     <DefaultLanguage>zh-CN</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -35,13 +35,21 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
-    <Folder Include="Properties\" />
+    <ProjectReference Include="..\OmniKits.Interfaces\OmniKits.Interfaces.csproj">
+      <Project>{b3bcd329-5fbc-4937-8bba-ba57cd11407d}</Project>
+      <Name>OmniKits.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OmniKits.Threading\OmniKits.Threading.csproj">
+      <Project>{787b1a70-ade2-4a51-be20-3df04412186b}</Project>
+      <Name>OmniKits.Threading</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ICanLock.cs" />
-    <Compile Include="IAwaitData.cs" />
-    <Compile Include="IWaitData.cs" />
-    <Compile Include="IHasData.cs" />
+    <Compile Include="TaskDataPulse.cs" />
+    <Compile Include="TaskPulseTube.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
