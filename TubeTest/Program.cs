@@ -34,7 +34,7 @@ namespace TubeTest
         {
             await TaskEx.Yield();
 
-            var tube = new TaskPulseTube<Data>();
+            var tube = new PulseTube<Data>();
             var pc = Environment.ProcessorCount;
             pc /= 2;
 
