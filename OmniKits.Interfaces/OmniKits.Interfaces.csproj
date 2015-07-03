@@ -40,8 +40,9 @@
   <ItemGroup>
     <Compile Include="ICanLock.cs" />
     <Compile Include="IAwaitData.cs" />
+    <Compile Include="IDataPulse.cs" />
+    <Compile Include="ITaskDataPulse.cs" />
     <Compile Include="IWaitData.cs" />
-    <Compile Include="IHasData.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

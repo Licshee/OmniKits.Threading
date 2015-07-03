@@ -1,5 +1,7 @@
 ﻿namespace OmniKits
 {
-    public interface IWaitData<T> : IHasData<T>
-    { }
+    public interface IWaitData<T>
+    {
+        T Data { get; }
+    }
 }

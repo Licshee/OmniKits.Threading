@@ -2,7 +2,7 @@
 
 namespace OmniKits.Threading.Tasks
 {
-    public sealed class TaskDataPulse<T> : IAwaitData<T>
+    public sealed class TaskDataPulse<T> : ITaskDataPulse<T>
     {
         TaskCompletionSource<T> _TCS = new TaskCompletionSource<T>();
         public Task<T> Task { get; }

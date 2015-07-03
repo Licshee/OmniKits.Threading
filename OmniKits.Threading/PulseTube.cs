@@ -7,7 +7,7 @@ namespace OmniKits.Threading
 {
     public class PulseTube<T> : IEnumerable<T>
     {
-        IWaitData<Pair> _Node;
+        IDataPulse<Pair> _Node;
         protected IWaitData<Pair> CurrentNode => _Node;
 
         public PulseTube()
@@ -27,7 +27,7 @@ namespace OmniKits.Threading
             }
         }
 
-        protected virtual IWaitData<Pair> CreateNode()
+        protected virtual IDataPulse<Pair> CreateNode()
             => new DataPulse<Pair>();
 
         public virtual void Push(T data)
