@@ -5,11 +5,11 @@
     <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{220FE0C2-756A-4E59-8E11-422EF9B4118B}</ProjectGuid>
+    <ProjectGuid>{787B1A70-ADE2-4A51-BE20-3DF04412186B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OmniKits.Threading.Tasks</RootNamespace>
-    <AssemblyName>OmniKits.Threading.Tasks</AssemblyName>
+    <RootNamespace>OmniKits.Threading</RootNamespace>
+    <AssemblyName>OmniKits.Threading</AssemblyName>
     <DefaultLanguage>zh-CN</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -21,7 +21,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;PORTABLE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -29,7 +29,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>TRACE;PORTABLE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -39,19 +39,11 @@
       <Project>{b3bcd329-5fbc-4937-8bba-ba57cd11407d}</Project>
       <Name>OmniKits.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\OmniKits.Threading-Portable\OmniKits.Threading-Portable.csproj">
-      <Project>{787b1a70-ade2-4a51-be20-3df04412186b}</Project>
-      <Name>OmniKits.Threading-Portable</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="DuplexCommandBase.cs" />
-    <Compile Include="TaskDataPulse.cs" />
-    <Compile Include="TaskPulseTube.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
   </ItemGroup>
+  <Import Project="..\OmniKits.Threading\OmniKits.Threading-Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
