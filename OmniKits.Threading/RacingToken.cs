@@ -3,44 +3,33 @@ using System.Threading;
 
 namespace OmniKits.Threading
 {
-    public struct RacingToken
+    public struct RacingToken<T>
+        where T : class
     {
-        private volatile Thread _Owner;
-        public bool IsCaptured => _Owner != null;
-        public bool IsOwnedByCurrentThread => _Owner == Thread.CurrentThread;
+        private volatile T _Token;
+        public bool IsCaptured => _Token != null;
+        public T Token => _Token;
 
-        public bool TryCapture()
+        public bool TryCapture(T token)
         {
+            if (token == null)
+                throw new ArgumentNullException();
+
             if (IsCaptured)
                 return false;
 
-            return Interlocked.CompareExchange(ref _Owner, Thread.CurrentThread, null) == null;
+            return Interlocked.CompareExchange(ref _Token, token, null) == null;
         }
 
-        public void Release()
+        public bool TryRelease(T token)
         {
-            var owner = _Owner;
+            if (token == null)
+                throw new ArgumentNullException();
 
-            if (_Owner != Thread.CurrentThread)
-                throw new InvalidOperationException();
-
-            _Owner = null;
-        }
-#if !PORTABLE
-        public bool ForceRelease()
-        {
-            var owner = _Owner;
-
-            if (owner == null)
+            if (!IsCaptured)
                 return false;
 
-            var isForeign = (owner == Thread.CurrentThread);
-
-            if (isForeign && owner.IsAlive)
-                throw new InvalidOperationException();
-
-            return Interlocked.CompareExchange(ref _Owner, null, owner) == owner && isForeign;
+            return Interlocked.CompareExchange(ref _Token, null, token) == token;
         }
-#endif
     }
 }

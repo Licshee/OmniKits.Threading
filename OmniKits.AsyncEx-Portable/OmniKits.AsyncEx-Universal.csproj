@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{83CD172D-CE1C-4CAD-BE04-5684018FA203}</ProjectGuid>
+    <ProjectGuid>{7C9BF2F2-3A41-48E4-BDCE-2F8B494DFADE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>OmniKits.Threading.Tasks</RootNamespace>
@@ -35,13 +35,13 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
-    <Folder Include="Properties\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\OmniKits.Interfaces\OmniKits.Interfaces.csproj">
       <Project>{b3bcd329-5fbc-4937-8bba-ba57cd11407d}</Project>
       <Name>OmniKits.Interfaces</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="..\OmniKits.AsyncEx\OmniKits.AsyncEx.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

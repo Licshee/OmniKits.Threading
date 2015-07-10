@@ -14,5 +14,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Locked.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PulseTube.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RacingToken.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RacingThread.cs" />
   </ItemGroup>
 </Project>

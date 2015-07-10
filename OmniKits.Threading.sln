@@ -11,11 +11,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TubeTest", "TubeTest\TubeTe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniKits.Tasks", "OmniKits.Tasks\OmniKits.Tasks.csproj", "{220FE0C2-756A-4E59-8E11-422EF9B4118B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniKits.AsyncEx45", "OmniKits.AsyncEx45\OmniKits.AsyncEx45.csproj", "{83CD172D-CE1C-4CAD-BE04-5684018FA203}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniKits.AsyncEx-Portable", "OmniKits.AsyncEx45\OmniKits.AsyncEx-Portable.csproj", "{83CD172D-CE1C-4CAD-BE04-5684018FA203}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "OmniKits.AsyncEx", "OmniKits.AsyncEx\OmniKits.AsyncEx.shproj", "{73A633BC-BA48-45BC-8C40-513594A4B061}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniKits.AsyncEx40", "OmniKits.AsyncEx40\OmniKits.AsyncEx40.csproj", "{911E2C85-4FDA-4F60-B1B8-A23AD98DEF30}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniKits.AsyncEx-40", "OmniKits.AsyncEx40\OmniKits.AsyncEx-40.csproj", "{911E2C85-4FDA-4F60-B1B8-A23AD98DEF30}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "OmniKits.Threading", "OmniKits.Threading\OmniKits.Threading.shproj", "{DC4D7679-DCB3-47AB-AE9A-9A8C53ED6C07}"
 EndProject
@@ -25,6 +25,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniKits.Threading-Silverli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniKits.Threading-WindowsPhone", "OmniKits.Threading-WindowsPhone\OmniKits.Threading-WindowsPhone.csproj", "{43F555A6-4196-4ED8-90F9-1B9D19084566}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniKits.AsyncEx-Universal", "OmniKits.AsyncEx-Portable\OmniKits.AsyncEx-Universal.csproj", "{7C9BF2F2-3A41-48E4-BDCE-2F8B494DFADE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniKits.AsyncEx-Legacy", "OmniKits.AsyncEx-Legacy\OmniKits.AsyncEx-Legacy.csproj", "{A69BA363-3015-414D-9D38-E990C7BE7576}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		OmniKits.AsyncEx\OmniKits.AsyncEx.projitems*{73a633bc-ba48-45bc-8c40-513594a4b061}*SharedItemsImports = 13
@@ -33,7 +37,9 @@ Global
 		OmniKits.Threading\OmniKits.Threading-Shared.projitems*{787b1a70-ade2-4a51-be20-3df04412186b}*SharedItemsImports = 4
 		OmniKits.Threading\OmniKits.Threading-Shared.projitems*{43f555a6-4196-4ed8-90f9-1b9d19084566}*SharedItemsImports = 4
 		OmniKits.AsyncEx\OmniKits.AsyncEx.projitems*{83cd172d-ce1c-4cad-be04-5684018fa203}*SharedItemsImports = 4
+		OmniKits.AsyncEx\OmniKits.AsyncEx.projitems*{7c9bf2f2-3a41-48e4-bdce-2f8b494dfade}*SharedItemsImports = 4
 		OmniKits.AsyncEx\OmniKits.AsyncEx.projitems*{911e2c85-4fda-4f60-b1b8-a23ad98def30}*SharedItemsImports = 4
+		OmniKits.AsyncEx\OmniKits.AsyncEx.projitems*{a69ba363-3015-414d-9d38-e990c7be7576}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -190,6 +196,38 @@ Global
 		{43F555A6-4196-4ED8-90F9-1B9D19084566}.Release|x64.Build.0 = Release|Any CPU
 		{43F555A6-4196-4ED8-90F9-1B9D19084566}.Release|x86.ActiveCfg = Release|x86
 		{43F555A6-4196-4ED8-90F9-1B9D19084566}.Release|x86.Build.0 = Release|x86
+		{7C9BF2F2-3A41-48E4-BDCE-2F8B494DFADE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C9BF2F2-3A41-48E4-BDCE-2F8B494DFADE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C9BF2F2-3A41-48E4-BDCE-2F8B494DFADE}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{7C9BF2F2-3A41-48E4-BDCE-2F8B494DFADE}.Debug|ARM.Build.0 = Debug|Any CPU
+		{7C9BF2F2-3A41-48E4-BDCE-2F8B494DFADE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7C9BF2F2-3A41-48E4-BDCE-2F8B494DFADE}.Debug|x64.Build.0 = Debug|Any CPU
+		{7C9BF2F2-3A41-48E4-BDCE-2F8B494DFADE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7C9BF2F2-3A41-48E4-BDCE-2F8B494DFADE}.Debug|x86.Build.0 = Debug|Any CPU
+		{7C9BF2F2-3A41-48E4-BDCE-2F8B494DFADE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C9BF2F2-3A41-48E4-BDCE-2F8B494DFADE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C9BF2F2-3A41-48E4-BDCE-2F8B494DFADE}.Release|ARM.ActiveCfg = Release|Any CPU
+		{7C9BF2F2-3A41-48E4-BDCE-2F8B494DFADE}.Release|ARM.Build.0 = Release|Any CPU
+		{7C9BF2F2-3A41-48E4-BDCE-2F8B494DFADE}.Release|x64.ActiveCfg = Release|Any CPU
+		{7C9BF2F2-3A41-48E4-BDCE-2F8B494DFADE}.Release|x64.Build.0 = Release|Any CPU
+		{7C9BF2F2-3A41-48E4-BDCE-2F8B494DFADE}.Release|x86.ActiveCfg = Release|Any CPU
+		{7C9BF2F2-3A41-48E4-BDCE-2F8B494DFADE}.Release|x86.Build.0 = Release|Any CPU
+		{A69BA363-3015-414D-9D38-E990C7BE7576}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A69BA363-3015-414D-9D38-E990C7BE7576}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A69BA363-3015-414D-9D38-E990C7BE7576}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{A69BA363-3015-414D-9D38-E990C7BE7576}.Debug|ARM.Build.0 = Debug|Any CPU
+		{A69BA363-3015-414D-9D38-E990C7BE7576}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A69BA363-3015-414D-9D38-E990C7BE7576}.Debug|x64.Build.0 = Debug|Any CPU
+		{A69BA363-3015-414D-9D38-E990C7BE7576}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A69BA363-3015-414D-9D38-E990C7BE7576}.Debug|x86.Build.0 = Debug|Any CPU
+		{A69BA363-3015-414D-9D38-E990C7BE7576}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A69BA363-3015-414D-9D38-E990C7BE7576}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A69BA363-3015-414D-9D38-E990C7BE7576}.Release|ARM.ActiveCfg = Release|Any CPU
+		{A69BA363-3015-414D-9D38-E990C7BE7576}.Release|ARM.Build.0 = Release|Any CPU
+		{A69BA363-3015-414D-9D38-E990C7BE7576}.Release|x64.ActiveCfg = Release|Any CPU
+		{A69BA363-3015-414D-9D38-E990C7BE7576}.Release|x64.Build.0 = Release|Any CPU
+		{A69BA363-3015-414D-9D38-E990C7BE7576}.Release|x86.ActiveCfg = Release|Any CPU
+		{A69BA363-3015-414D-9D38-E990C7BE7576}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

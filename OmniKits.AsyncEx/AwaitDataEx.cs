@@ -1,6 +1,6 @@
 ﻿namespace OmniKits.Threading.Tasks
 {
-#if NET40
+#if LegacyTask
     using Microsoft.Runtime.CompilerServices;
 #else
     using System.Runtime.CompilerServices;
