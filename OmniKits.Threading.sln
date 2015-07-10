@@ -27,8 +27,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniKits.Threading-WindowsP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniKits.AsyncEx-Universal", "OmniKits.AsyncEx-Universal\OmniKits.AsyncEx-Universal.csproj", "{7C9BF2F2-3A41-48E4-BDCE-2F8B494DFADE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniKits.AsyncEx-Legacy", "OmniKits.AsyncEx-Legacy\OmniKits.AsyncEx-Legacy.csproj", "{A69BA363-3015-414D-9D38-E990C7BE7576}"
-EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		OmniKits.AsyncEx\OmniKits.AsyncEx.projitems*{73a633bc-ba48-45bc-8c40-513594a4b061}*SharedItemsImports = 13
@@ -39,7 +37,6 @@ Global
 		OmniKits.AsyncEx\OmniKits.AsyncEx.projitems*{83cd172d-ce1c-4cad-be04-5684018fa203}*SharedItemsImports = 4
 		OmniKits.AsyncEx\OmniKits.AsyncEx.projitems*{7c9bf2f2-3a41-48e4-bdce-2f8b494dfade}*SharedItemsImports = 4
 		OmniKits.AsyncEx\OmniKits.AsyncEx.projitems*{911e2c85-4fda-4f60-b1b8-a23ad98def30}*SharedItemsImports = 4
-		OmniKits.AsyncEx\OmniKits.AsyncEx.projitems*{a69ba363-3015-414d-9d38-e990c7be7576}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -212,22 +209,6 @@ Global
 		{7C9BF2F2-3A41-48E4-BDCE-2F8B494DFADE}.Release|x64.Build.0 = Release|Any CPU
 		{7C9BF2F2-3A41-48E4-BDCE-2F8B494DFADE}.Release|x86.ActiveCfg = Release|Any CPU
 		{7C9BF2F2-3A41-48E4-BDCE-2F8B494DFADE}.Release|x86.Build.0 = Release|Any CPU
-		{A69BA363-3015-414D-9D38-E990C7BE7576}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A69BA363-3015-414D-9D38-E990C7BE7576}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A69BA363-3015-414D-9D38-E990C7BE7576}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{A69BA363-3015-414D-9D38-E990C7BE7576}.Debug|ARM.Build.0 = Debug|Any CPU
-		{A69BA363-3015-414D-9D38-E990C7BE7576}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{A69BA363-3015-414D-9D38-E990C7BE7576}.Debug|x64.Build.0 = Debug|Any CPU
-		{A69BA363-3015-414D-9D38-E990C7BE7576}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{A69BA363-3015-414D-9D38-E990C7BE7576}.Debug|x86.Build.0 = Debug|Any CPU
-		{A69BA363-3015-414D-9D38-E990C7BE7576}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A69BA363-3015-414D-9D38-E990C7BE7576}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A69BA363-3015-414D-9D38-E990C7BE7576}.Release|ARM.ActiveCfg = Release|Any CPU
-		{A69BA363-3015-414D-9D38-E990C7BE7576}.Release|ARM.Build.0 = Release|Any CPU
-		{A69BA363-3015-414D-9D38-E990C7BE7576}.Release|x64.ActiveCfg = Release|Any CPU
-		{A69BA363-3015-414D-9D38-E990C7BE7576}.Release|x64.Build.0 = Release|Any CPU
-		{A69BA363-3015-414D-9D38-E990C7BE7576}.Release|x86.ActiveCfg = Release|Any CPU
-		{A69BA363-3015-414D-9D38-E990C7BE7576}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

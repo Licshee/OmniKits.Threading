@@ -1,9 +1,9 @@
 ﻿namespace OmniKits.Threading.Tasks
 {
-#if LegacyTask
-    using Microsoft.Runtime.CompilerServices;
-#else
+#if NET45
     using System.Runtime.CompilerServices;
+#else
+    using Microsoft.Runtime.CompilerServices;
 #endif
 
     public static class AwaitDataEx
