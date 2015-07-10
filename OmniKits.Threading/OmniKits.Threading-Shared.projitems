@@ -15,5 +15,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)PulseTube.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RacingToken.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RacingThread.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tasks\DuplexCommandBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tasks\TaskDataPulse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tasks\TaskPulseTube.cs" />
   </ItemGroup>
 </Project>

@@ -72,6 +72,15 @@
     <Compile Include="..\OmniKits.Threading\RacingToken.cs">
       <Link>RacingToken.cs</Link>
     </Compile>
+    <Compile Include="..\OmniKits.Threading\Tasks\DuplexCommandBase.cs">
+      <Link>Tasks\DuplexCommandBase.cs</Link>
+    </Compile>
+    <Compile Include="..\OmniKits.Threading\Tasks\TaskDataPulse.cs">
+      <Link>Tasks\TaskDataPulse.cs</Link>
+    </Compile>
+    <Compile Include="..\OmniKits.Threading\Tasks\TaskPulseTube.cs">
+      <Link>Tasks\TaskPulseTube.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

@@ -71,10 +71,6 @@
     <Compile Include="Program.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\OmniKits.Tasks\OmniKits.Tasks.csproj">
-      <Project>{220fe0c2-756a-4e59-8e11-422ef9b4118b}</Project>
-      <Name>OmniKits.Tasks</Name>
-    </ProjectReference>
     <ProjectReference Include="..\OmniKits.Threading-Portable\OmniKits.Threading-Portable.csproj">
       <Project>{787b1a70-ade2-4a51-be20-3df04412186b}</Project>
       <Name>OmniKits.Threading-Portable</Name>
