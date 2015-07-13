@@ -6,7 +6,7 @@ namespace OmniKits.Threading
     {
         protected object LocalMonitor { get; }
 
-        public Locked(bool lockSelf)
+        protected Locked(bool lockSelf)
         {
             LocalMonitor = lockSelf ? this : new object();
         }
