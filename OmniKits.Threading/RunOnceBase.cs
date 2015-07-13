@@ -10,31 +10,88 @@ namespace OmniKits.Threading
     {
         protected object LocalMonitor { get; }
 
-        private volatile Task<T> _CurrentTask;
-        public Task<T> CurrentTask => _CurrentTask;
+        class AtomicState
+        {
+            public CancellationTokenSource CTS;
+            public Task<T> Task;
+        }
+        private volatile AtomicState _State;
+        public Task<T> CurrentTask => _State.Task;
 
-        public RunOnceBase(bool lockSelf)
+        protected RunOnceBase(bool lockSelf)
         {
             LocalMonitor = lockSelf ? this : new object();
         }
 
-        protected abstract Task<T> MainAsync();
+        protected abstract Task<T> MainAsync(CancellationToken cancellationToken);
 
-        public virtual Task<T> RunAsync()
+        public Task<T> RunAsync()
         {
-            var task = CurrentTask;
-            if (task != null)
-                return task;
-
+            {
+                var state = _State;
+                if (state != null)
+                    return state.Task;
+            }
             lock (LocalMonitor)
             {
-                if (task != null)
-                    return task;
+                var state = _State;
+                if (state != null)
+                    return state.Task;
 
-                task = MainAsync();
-                _CurrentTask = task;
+                var cts = new CancellationTokenSource();
+                _State = new AtomicState
+                {
+                    CTS = cts,
+                    Task = MainAsync(cts.Token),
+                };
+                return _State.Task;
             }
-            return task;
+        }
+        public T Run()
+            => RunAsync().Result;
+
+        protected void Reset(bool forceReset)
+        {
+            {
+                var state = _State;
+                if (state == null)
+                    return;
+                if (!(forceReset || state.CTS.IsCancellationRequested))
+                    throw new InvalidOperationException();
+            }
+            lock (LocalMonitor)
+            {
+                var state = _State;
+                if (state == null)
+                    return;
+
+                if (!state.CTS.IsCancellationRequested)
+                {
+                    if (forceReset)
+                        state.CTS.Cancel();
+                }
+
+                _State = null;
+            }
+        }
+        public void Reset()
+            => Reset(false);
+
+        public void Stop()
+        {
+            {
+                var state = _State;
+                if (state == null || state.CTS.IsCancellationRequested)
+                    throw new InvalidOperationException();
+            }
+            lock (LocalMonitor)
+            {
+                var state = _State;
+                if (state == null || state.CTS.IsCancellationRequested)
+                    throw new InvalidOperationException();
+
+                state.CTS.Cancel();
+            }
         }
     }
 }

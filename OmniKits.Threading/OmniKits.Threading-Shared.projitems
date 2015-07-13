@@ -17,6 +17,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)RacingThread.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RunOnceBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tasks\DuplexCommandBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tasks\MutexCommandBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tasks\TaskDataPulse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tasks\TaskPulseTube.cs" />
   </ItemGroup>

@@ -4,7 +4,7 @@ namespace OmniKits.Threading
 {
     public abstract class DoubleCheckedLockBase : Locked
     {
-        public DoubleCheckedLockBase(bool lockSelf)
+        protected DoubleCheckedLockBase(bool lockSelf)
             : base(lockSelf)
         { }
 
