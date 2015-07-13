@@ -39,7 +39,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CanRunInterfaces.cs" />
-    <Compile Include="ICanLock.cs" />
     <Compile Include="IAwaitData.cs" />
     <Compile Include="IDataPulse.cs" />
     <Compile Include="ITaskDataPulse.cs" />

@@ -2,20 +2,20 @@
 
 namespace OmniKits.Threading
 {
-    public abstract class DoubleCheckedLockBase : Locked
+    public abstract class DoubleCheckedLockingBase : LockingBase
     {
-        protected DoubleCheckedLockBase(bool lockSelf)
+        protected DoubleCheckedLockingBase(bool lockSelf)
             : base(lockSelf)
         { }
 
         protected abstract bool IsLockingPermitted();
 
-        public override void TryLocked(Action action)
+        protected override void TryLocked()
         {
             if (IsLockingPermitted())
                 lock (LocalMonitor)
                     if (IsLockingPermitted())
-                        action();
+                        LockedOperation();
         }
     }
 }

@@ -10,13 +10,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)DataPulse.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)DoubleCheckedLockBase.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Locked.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DoubleCheckedLockingBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)LockingBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PulseTube.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RacingToken.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RacingThread.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RunOnceBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tasks\DuplexCommandBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tasks\FastMutexCommandBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tasks\MutexCommandBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tasks\TaskDataPulse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tasks\TaskPulseTube.cs" />

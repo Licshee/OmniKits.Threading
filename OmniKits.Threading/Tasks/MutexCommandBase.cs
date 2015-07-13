@@ -10,6 +10,7 @@ namespace OmniKits.Threading.Tasks
     {
         protected object LocalMonitor { get; }
         private Task<T> _Task;
+        protected Task<T> CurrentTask => _Task;
 
         protected MutexCommandBase(bool lockSelf)
         {

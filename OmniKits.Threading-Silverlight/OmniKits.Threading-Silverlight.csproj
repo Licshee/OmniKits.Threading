@@ -60,11 +60,11 @@
     <Compile Include="..\OmniKits.Threading\DataPulse.cs">
       <Link>DataPulse.cs</Link>
     </Compile>
-    <Compile Include="..\OmniKits.Threading\DoubleCheckedLockBase.cs">
-      <Link>DoubleCheckedLockBase.cs</Link>
+    <Compile Include="..\OmniKits.Threading\DoubleCheckedLockingBase.cs">
+      <Link>DoubleCheckedLockingBase.cs</Link>
     </Compile>
-    <Compile Include="..\OmniKits.Threading\Locked.cs">
-      <Link>Locked.cs</Link>
+    <Compile Include="..\OmniKits.Threading\LockingBase.cs">
+      <Link>LockingBase.cs</Link>
     </Compile>
     <Compile Include="..\OmniKits.Threading\PulseTube.cs">
       <Link>PulseTube.cs</Link>

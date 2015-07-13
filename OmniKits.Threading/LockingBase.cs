@@ -2,19 +2,21 @@
 
 namespace OmniKits.Threading
 {
-    public class Locked : ICanLock
+    public abstract class LockingBase
     {
         protected object LocalMonitor { get; }
 
-        protected Locked(bool lockSelf)
+        protected LockingBase(bool lockSelf)
         {
             LocalMonitor = lockSelf ? this : new object();
         }
 
-        public virtual void TryLocked(Action action)
+        protected abstract void LockedOperation();
+
+        protected virtual void TryLocked()
         {
             lock (LocalMonitor)
-                action();
+                LockedOperation();
         }
     }
 }
